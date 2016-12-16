@@ -13,7 +13,22 @@
   (testing "Test hex-string to base64"
     (def result (bits-to-base64String (hexstring-to-bits hex-string)))
     (is (= result base64-string)))
+)
 
+(deftest single-cipher
 
+  (def cipher-text "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736")
+  (def test-range (doall (range 256)))
+
+  (def result
+      (->> test-range
+          (map #(xor-with-offset cipher-text %))
+          (filter is-letters?)
+      )
+  )
+
+  (testing "Sleazing a single cipher"
+    (is (= result '("Cooking MC's like a pound of bacon"))))
 
 )
+
