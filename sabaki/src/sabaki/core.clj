@@ -8,28 +8,35 @@
 
 
 
-(def lines (doall
-             (->> (slurp "single-cipher")
-                  (clojure.string/split-lines))))
 
-(defn sleaze-single-cipher []
 
+(defn sleaze-single-cipher [file]
+
+    ; Get lines
+   (def lines (doall
+               (->> (slurp file)
+                    (clojure.string/split-lines))))
+
+    ; Define break for single line
    (defn process [cipher-text channel]
       (go (let [result (sleaze-single-xor cipher-text)]
-          (if (> (count result) 0) (>! channel result))))
+          (if (not-empty result) (>! channel result))))
    )
 
+
+    ; Make channels for each line
    (let [ chans (partition-all 2 (interleave lines (for [line lines] (chan))))
           chans-only (mapv second chans) ]
 
+
       (doseq [pair chans] (apply process pair))
+
       (let [[v p] (alts!! chans-only)] (println "Result: " v))
    )
-
 )
 
 (defn -main [& args]
   (time
-    (sleaze-single-cipher)
+    (sleaze-single-cipher "single-cipher")
   )
 )
