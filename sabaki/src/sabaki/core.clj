@@ -9,7 +9,7 @@
 
 (defn sleaze-single-cipher [file]
 
-    ; Get lines
+   ; Get lines
    (def lines (doall
                (->> (slurp file)
                     (clojure.string/split-lines))))

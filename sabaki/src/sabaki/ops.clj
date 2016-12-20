@@ -7,9 +7,10 @@
 (defn xor-with-offset [string n]
   (->> string
        (hexstring-to-bytes)
-       (map #(bit-xor n %))
-       (bytes-to-string))
+       (mapv #(bit-xor n %))
+       (bytes-to-string)
   )
+)
 
 (defn get-n-gram-freq [n string]
   (->> string
@@ -21,17 +22,17 @@
 
 (defn is-letters? [s]
   (> (/ (count (filter alphabet (clojure.string/lower-case s))) (count s)) 2/3)
- )
-
+)
 
 (defn sleaze-single-xor [cipher-text]
 
-  (def test-range (doall (range 256)))
+  (->> (range 256)
+       (mapv #(xor-with-offset cipher-text %))
+       (filter is-letters?)
+       (first)
+  )
 
-  (->> test-range
-         (map #(xor-with-offset cipher-text %))
-         (filter is-letters?)
-   )
+
 )
 
 

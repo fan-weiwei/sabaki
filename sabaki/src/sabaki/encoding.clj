@@ -31,7 +31,7 @@
 (defn nibbles-to-bytes [string]
   (->> string
        (partition 2)
-       (map #(+ (bit-shift-left (nth % 0) 4) (nth % 1)))
+       (mapv #(+ (bit-shift-left (first %) 4) (second %)))
        )
   )
 
@@ -62,7 +62,7 @@
   (reduce + (for [x (range 0 n)]
               (bit-shift-left (Character/digit (nth string x) 2) (- (- n 1) x))
               ))
-  )
+)
 
 (defn bits-to-base64Bytes [string]
   (->> string
@@ -107,15 +107,15 @@
   (->> bytes
        (map #(get hex-chars %))
        (apply str)
-       )
   )
+)
 
 (defn bytes-to-string [bytes]
   (->> bytes
        (map char)
        (apply str)
-       )
   )
+)
 
 (defn bits-to-hexString [string]
   (->> string
