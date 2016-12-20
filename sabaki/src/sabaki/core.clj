@@ -7,9 +7,6 @@
   (require [sabaki.ops :refer :all]))
 
 
-
-
-
 (defn sleaze-single-cipher [file]
 
     ; Get lines
@@ -23,11 +20,9 @@
           (if (not-empty result) (>! channel result))))
    )
 
-
     ; Make channels for each line
-   (let [ chans (partition-all 2 (interleave lines (for [line lines] (chan))))
+   (let [ chans (mapv #(vector % (chan)) lines)
           chans-only (mapv second chans) ]
-
 
       (doseq [pair chans] (apply process pair))
 
