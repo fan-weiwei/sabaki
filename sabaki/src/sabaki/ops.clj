@@ -34,4 +34,14 @@
 
 )
 
+(defn encode-repeating-key [file key]
+  (->>
+    (slurp-ascii-to-bytes file)
+    (partition 3 3 nil)
+    (mapcat #(map bit-xor (map int key) %))
+    (mapcat byte-to-bits)
+    (bits-to-hexString)
+    )
+  )
+
 

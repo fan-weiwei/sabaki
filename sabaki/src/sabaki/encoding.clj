@@ -121,4 +121,5 @@
 
 (defn xor-bytes-with-char [char bytes]
   (map #(bit-xor (int char) %) bytes)
-  )
+)
+

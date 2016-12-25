@@ -21,16 +21,7 @@
   (println base64-chars)
 )
 
-(defn encode-repeating-key []
-  (->>
-    (slurp-ascii-to-bytes "repeating-key-test")
-    (xor-bytes-with-char \I)
-    (mapcat byte-to-bits)
-    (bits-to-hexString)
-  )
-)
 
 (defn -main [& args]
-  (println (encode-repeating-key))
-
+  (println (encode-repeating-key "repeating-key-test" "ICE"))
 )
