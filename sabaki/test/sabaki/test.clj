@@ -92,3 +92,14 @@
          )
 )
 
+(deftest hamming-distance
+
+  (testing "Hamming example on strings"
+    (is (= (ascii-hamming-distance "this is a test" "wokka wokka!!!") 37
+    ))
+
+
+  )
+
+)
+

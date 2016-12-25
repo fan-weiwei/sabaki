@@ -7,18 +7,15 @@
   (require [sabaki.ops :refer :all]))
 
 (defn slurp-repeating-key []
-  (def cipher-text
-    (->>
-      (slurp "repeating-key")
-      (filter #(not= \newline %))
-      (map char)
-      (map #(.indexOf base64-chars %))
-      ;(filter #(> 0 (.indexOf base64-chars %)))
-      ))
-
-  ;(map #(.indexOf base64-chars %))
-  (println cipher-text)
-  (println base64-chars)
+  (->>
+    (slurp "repeating-key")
+    (filter #(not= \newline %))
+    (map char)
+    (map #(.indexOf base64-chars %))
+    (last)
+    (get base64-chars)
+    (str)
+    )
 )
 
 

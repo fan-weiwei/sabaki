@@ -44,4 +44,19 @@
     )
   )
 
+(defn byte-hamming-weight [byte]
+  (->> (map bit-test (repeat byte) (range 8))
+       (map #(if % 1 0))
+       (reduce +)
+       )
+)
+
+(defn ascii-hamming-distance [str1 str2]
+  (->> (map bit-xor (map int str1) (map int str2))
+       (map byte-hamming-weight)
+       (reduce +))
+)
+
+
+
 
