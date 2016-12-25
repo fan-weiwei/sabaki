@@ -11,14 +11,6 @@
      \+ \/ \=
      ])
 
-(defn chr-to-nibble [c] (Character/digit c 16))
-
-(defn nibbles-to-bytes [string]
-  (->> string
-       (partition 2)
-       (mapv #(+ (bit-shift-left (first %) 4) (second %)))
-       )
-  )
 
 (defn byte-to-bits [byte]
   (->>
@@ -27,6 +19,35 @@
     (map #(if % 1 0))
     )
   )
+
+(defn base64-to-bits [base64]
+                (->>
+                  (map bit-test (repeat base64) (range 6))
+                  (reverse)
+                  (map #(if % 1 0))
+                  )
+                )
+
+(defn bits-to-base64String [string]
+  (->> string
+       (partition 6)
+       (map reverse)
+       (map #(map bit-shift-left % (range)))
+       (map #(reduce + %))
+       (map #(get base64-chars %))
+       (apply str)
+       )
+  )
+
+
+(defn nibbles-to-bytes [string]
+  (->> string
+       (partition 2)
+       (mapv #(+ (bit-shift-left (first %) 4) (second %)))
+       )
+  )
+
+(defn chr-to-nibble [c] (Character/digit c 16))
 
 (defn hexstring-to-bits [string]
   (->> string
@@ -42,18 +63,6 @@
        (nibbles-to-bytes)
        )
   )
-
-
-(defn bits-to-base64String [string]
-     (->> string
-          (partition 6)
-          (map reverse)
-          (map #(map bit-shift-left % (range)))
-          (map #(reduce + %))
-          (map #(get base64-chars %))
-          (apply str)
-          )
-     )
 
 (defn bytes-to-string [bytes]
   (->> bytes
@@ -79,6 +88,21 @@
     (map int)
     )
   )
+
+(defn slurp-base64-to-bytes [file]
+  (->>
+    (slurp file)
+    (filter #(not= \newline %))
+    (map char)
+    (map #(.indexOf base64-chars %))
+    (mapcat base64-to-bits)
+    (partition 8)
+    (map reverse)
+    (map #(map bit-shift-left % (range)))
+    (map #(reduce + %))
+    )
+
+)
 
 (defn xor-bytes-with-char [char bytes]
   (map #(bit-xor (int char) %) bytes)

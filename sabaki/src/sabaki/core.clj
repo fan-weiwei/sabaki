@@ -19,9 +19,9 @@
     )
 )
 
-(defn get-keysize [data]
+(defn get-keysize [limit data]
   (first
-    (->> (range 2 41)
+    (->> (range 2 (+ limit 1))
          (map #(block-hamming % data))
          (map float)
          (map vector (range 2 41))
@@ -32,12 +32,42 @@
 
 
 (defn -main [& args]
-  (let [data (->> (slurp "repeating-key")
-                  (map int)
-                  (filter #(not= \newline %)))
-        keysize (get-keysize data)]
 
-    (println keysize)
+  (->>
+    (base64-encode-repeating-key "super-test" "ICE")
+    (filter #(not= \newline %))
+    (map char)
+    (map #(.indexOf base64-chars %))
+    (mapcat base64-to-bits)
+    (partition 8)
+    (map reverse)
+    (map #(map bit-shift-left % (range)))
+    (map #(reduce + %))
+    (get-keysize 41))
 
-    )
+  (let [data (slurp-base64-to-bytes "repeating-key")
+        keysize (get-keysize 40 data)
+        lines (->> data
+                   (partition keysize)
+                   (apply map list))]
+
+    (letfn [(process [line]
+              (->> (range 256)
+                   (mapv #(xor-with-offset line %))
+                   (sort-by letter-percentage >)
+                   (first)
+                   ;(filter is-letters?)
+                   ;(first)
+                   ))
+
+            ]
+      ;(process (second lines))
+
+      (->> (map process lines)
+           (apply mapcat list)
+           (apply str)
+
+           )
+
+      ))
 )
