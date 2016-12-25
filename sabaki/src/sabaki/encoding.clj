@@ -43,12 +43,6 @@
        )
   )
 
-(defn take-n-bits-to-byte [n, string]
-  (reduce + (for [x (range 0 n)]
-              (bit-shift-left (Character/digit (nth string x) 2) (- (- n 1) x))
-              ))
-)
-
 
 (defn bits-to-base64String [string]
      (->> string
@@ -60,31 +54,6 @@
           (apply str)
           )
      )
-
-(defn pairwise-xor [pair]
-  (apply bit-xor pair)
-)
-
-(defn xor-bits [str1 str2]
-  (map pairwise-xor
-       (map list (map #(Character/digit % 2) str1) (map #(Character/digit % 2) str2)))
-  )
-
-(defn bits-to-nibbles [string]
-  (->> string
-       (partition 4)
-       (map #(reduce + (for [x (range 0 4)]
-                         (bit-shift-left (nth % x) (- 3 x))
-                         )))
-       )
-  )
-
-(defn nibbles-to-hexstring [bytes]
-  (->> bytes
-       (map #(get hex-chars %))
-       (apply str)
-  )
-)
 
 (defn bytes-to-string [bytes]
   (->> bytes
@@ -103,14 +72,6 @@
        (apply str)
    )
  )
-
-(defn bits-to-string [string]
-  (->> string
-       (bits-to-nibbles)
-       (nibbles-to-bytes)
-       (bytes-to-string)
-       )
-  )
 
 (defn slurp-ascii-to-bytes [file]
   (->>
