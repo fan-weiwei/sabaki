@@ -7,18 +7,6 @@
   (require [sabaki.ops :refer :all]))
 
 
-(defn slurp-repeating-key []
-  (->>
-    (slurp "repeating-key")
-    (filter #(not= \newline %))
-    (map char)
-    (map #(.indexOf base64-chars %))
-    (last)
-    (get base64-chars)
-    (str)
-    )
-)
-
 (defn get-keysize [limit data]
   (first
     (->> (range 2 (+ limit 1))
@@ -44,11 +32,10 @@
                      (mapv #(xor-with-offset line %))
                      (sort-by letter-percentage >)
                      (first)
-                     ;(filter is-letters?)
-                     ;(first)
                      ))
 
               ]
+
         (let [result (->> (map process lines)
                           (apply mapcat list)
                           (apply str)
@@ -64,10 +51,6 @@
                )
 
           )
-
-
         )))
-
-
 
 )
