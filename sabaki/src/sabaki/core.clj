@@ -49,14 +49,25 @@
                      ))
 
               ]
-        ;(process (second lines))
+        (let [result (->> (map process lines)
+                          (apply mapcat list)
+                          (apply str)
 
-        (->> (map process lines)
-             (apply mapcat list)
-             (apply str)
+                          )]
 
-             )
+          (->> result
+               (map int)
+               (map bit-xor data)
+               (map char)
+               (take keysize)
+               (apply str)
+               )
+
+          )
+
 
         )))
+
+
 
 )
