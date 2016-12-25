@@ -13,19 +13,6 @@
 
 (defn chr-to-nibble [c] (Character/digit c 16))
 
-(defn byte-to-bits [b]
-  (apply str (reverse
-               (for [x (range 0 8)]
-                 (if
-                   (< 0 (->> x
-                             (bit-shift-left 1)
-                             (bit-and b)
-                             ))
-                   1 0
-                   ))
-               ))
-  )
-
 (defn nibbles-to-bytes [string]
   (->> string
        (partition 2)
@@ -33,26 +20,26 @@
        )
   )
 
+(defn byte-to-bits [byte]
+  (->>
+    (map bit-test (repeat byte) (range 8))
+    (reverse)
+    (map #(if % 1 0))
+    )
+  )
+
 (defn hexstring-to-bits [string]
   (->> string
        (map chr-to-nibble)
        (nibbles-to-bytes)
-       (map byte-to-bits)
-       (apply str)
-       )
-  )
+       (mapcat byte-to-bits)
+   )
+)
 
 (defn hexstring-to-bytes [string]
   (->> string
        (map chr-to-nibble)
        (nibbles-to-bytes)
-       )
-  )
-
-(defn ascii-to-bytes [string]
-  (->> string
-       (map chr-to-nibble)
-       (map nibbles-to-bytes)
        )
   )
 
@@ -62,26 +49,17 @@
               ))
 )
 
-(defn bits-to-base64Bytes [string]
-  (->> string
-       (partition 6)
-       (map #(take-n-bits-to-byte 6 %))
-       )
-  )
-
-(defn base64Bytes-to-string [bytes]
-  (->> bytes
-       (map #(get base64-chars %))
-       (apply str)
-       )
-  )
 
 (defn bits-to-base64String [string]
-  (->> string
-       (bits-to-base64Bytes)
-       (base64Bytes-to-string)
-       )
-  )
+     (->> string
+          (partition 6)
+          (map reverse)
+          (map #(map bit-shift-left % (range)))
+          (map #(reduce + %))
+          (map #(get base64-chars %))
+          (apply str)
+          )
+     )
 
 (defn pairwise-xor [pair]
   (apply bit-xor pair)
@@ -117,10 +95,14 @@
 
 (defn bits-to-hexString [string]
   (->> string
-       (bits-to-nibbles)
-       (nibbles-to-hexstring)
-       )
-  )
+       (partition 4)
+       (map reverse)
+       (map #(map bit-shift-left % (range)))
+       (map #(reduce + %)) ; got bytes
+       (map #(get hex-chars %))
+       (apply str)
+   )
+ )
 
 (defn bits-to-string [string]
   (->> string
@@ -128,4 +110,15 @@
        (nibbles-to-bytes)
        (bytes-to-string)
        )
+  )
+
+(defn slurp-ascii-to-bytes [file]
+  (->>
+    (slurp file)
+    (map int)
+    )
+  )
+
+(defn xor-bytes-with-char [char bytes]
+  (map #(bit-xor (int char) %) bytes)
   )

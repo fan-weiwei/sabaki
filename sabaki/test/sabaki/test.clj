@@ -20,6 +20,21 @@
     (is (= result base64-string)))
 )
 
+(deftest xor-single-char
+  (testing "Test single repeating xor"
+
+    (is (= (->>
+             (slurp-ascii-to-bytes "repeating-key-test")
+             (xor-bytes-with-char \I)
+             (mapcat byte-to-bits)
+             (bits-to-hexString)
+             )
+
+           "0b3c3b2720272e696e2c246569202f6930263c692820276e3d69383c202a226928272d692720242b252c4300692e26692a3b283330693e212c27690069212c283b6928692a30242b2825"))
+
+    )
+)
+
 (deftest single-cipher
 
   (def single-cipher-text "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736")
@@ -64,6 +79,5 @@
 
            )
          )
-
 )
 
