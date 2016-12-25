@@ -84,13 +84,8 @@
 
 
 (defn block-hamming [keysize bytes]
-  (->> bytes
-          (partition keysize keysize)
-          (partition 2 1)
-          (take 20)
-          (map #(apply bytes-hamming-distance %))
-          (reduce +)
-          )
+  (let [offset (drop keysize bytes)]
+  (bytes-hamming-distance offset bytes))
 )
 
 

@@ -32,42 +32,31 @@
 
 
 (defn -main [& args]
+  (println
+    (let [data (slurp-base64-to-bytes "repeating-key")
+          keysize (get-keysize 41 data)
+          lines (->> data
+                     (partition keysize)
+                     (apply map list))]
 
-  (->>
-    (base64-encode-repeating-key "super-test" "ICE")
-    (filter #(not= \newline %))
-    (map char)
-    (map #(.indexOf base64-chars %))
-    (mapcat base64-to-bits)
-    (partition 8)
-    (map reverse)
-    (map #(map bit-shift-left % (range)))
-    (map #(reduce + %))
-    (get-keysize 41))
+      (letfn [(process [line]
+                (->> (range 256)
+                     (mapv #(xor-with-offset line %))
+                     (sort-by letter-percentage >)
+                     (first)
+                     ;(filter is-letters?)
+                     ;(first)
+                     ))
 
-  (let [data (slurp-base64-to-bytes "repeating-key")
-        keysize (get-keysize 40 data)
-        lines (->> data
-                   (partition keysize)
-                   (apply map list))]
+              ]
+        ;(process (second lines))
 
-    (letfn [(process [line]
-              (->> (range 256)
-                   (mapv #(xor-with-offset line %))
-                   (sort-by letter-percentage >)
-                   (first)
-                   ;(filter is-letters?)
-                   ;(first)
-                   ))
+        (->> (map process lines)
+             (apply mapcat list)
+             (apply str)
 
-            ]
-      ;(process (second lines))
+             )
 
-      (->> (map process lines)
-           (apply mapcat list)
-           (apply str)
+        )))
 
-           )
-
-      ))
 )
