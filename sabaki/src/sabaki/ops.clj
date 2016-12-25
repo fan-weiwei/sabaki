@@ -57,6 +57,27 @@
        (reduce +))
 )
 
+(defn bytes-hamming-distance [bytes1 bytes2]
+  (/ (->> (map bit-xor bytes1 bytes2)
+          (map byte-hamming-weight)
+          (reduce +)) (count bytes1)))
+
+
+(defn block-hamming [keysize bytes]
+  (/ (->> bytes
+          (partition keysize keysize)
+          (partition 2 1)
+          (take 1)
+          (map #(apply bytes-hamming-distance %))
+          (reduce +)
+          ) 1)
+  )
+
+
+
+
+
+
 
 
 

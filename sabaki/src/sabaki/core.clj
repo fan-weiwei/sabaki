@@ -6,6 +6,7 @@
   (require [sabaki.encoding :refer :all])
   (require [sabaki.ops :refer :all]))
 
+
 (defn slurp-repeating-key []
   (->>
     (slurp "repeating-key")
@@ -18,7 +19,25 @@
     )
 )
 
+(defn get-keysize [data]
+  (first
+    (->> (range 2 41)
+         (map #(block-hamming % data))
+         (map float)
+         (map vector (range 2 41))
+         (sort-by last)
+         (first)
+         ))
+)
+
 
 (defn -main [& args]
-  (println (encode-repeating-key "repeating-key-test" "ICE"))
+  (let [data (->> (slurp "repeating-key")
+                  (map int)
+                  (filter #(not= \newline %)))
+        keysize (get-keysize data)]
+
+    (println keysize)
+
+    )
 )
