@@ -1,17 +1,15 @@
 (ns sabaki.encoding)
 
-(def ^:private base64-chars
-  "Base64 Characters in the right order."
-  (vec
-    (concat
-      (map char
-           (concat
-             (range (int \A) (inc (int \Z)))
-             (range (int \a) (inc (int \z)))
-             (range (int \0) (inc (int \9)))))
-      [\+ \/ \=])))
+(def hex-chars [\0 \1 \2 \3 \4 \5 \6 \7 \8 \9 \a \b \c \d \e \f])
 
-(def ^:private hex-chars [\0 \1 \2 \3 \4 \5 \6 \7 \8 \9 \a \b \c \d \e \f])
+(def base64-chars [
+\A \B \C \D \E \F \G \H \I
+ \J \K \L \M \N \O \P \Q \R \S \T \U \V \W
+  \X \Y \Z \a \b \c \d \e \f \g \h \i \j
+   \k \l \m \n \o \p \q \r \s \t \u \v \w
+    \x \y \z \0 \1 \2 \3 \4 \5 \6 \7 \8 \9
+     \+ \/ \=
+     ])
 
 (defn chr-to-nibble [c] (Character/digit c 16))
 
@@ -51,7 +49,7 @@
        )
   )
 
-(defn string-to-bytes [string]
+(defn ascii-to-bytes [string]
   (->> string
        (map chr-to-nibble)
        (map nibbles-to-bytes)
@@ -87,7 +85,7 @@
 
 (defn pairwise-xor [pair]
   (apply bit-xor pair)
-  )
+)
 
 (defn xor-bits [str1 str2]
   (map pairwise-xor
