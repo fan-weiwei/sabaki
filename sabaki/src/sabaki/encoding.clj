@@ -28,6 +28,15 @@
                   )
                 )
 
+
+(defn base16-to-bits [base64]
+  (->>
+    (map bit-test (repeat base64) (range 4))
+    (reverse)
+    (map #(if % 1 0))
+    )
+  )
+
 (defn bits-to-base64String [string]
   (->> string
        (partition 6)

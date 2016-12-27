@@ -6,7 +6,7 @@
 
 (defn xor-with-offset [string n]
   (->> string
-       (mapv #(bit-xor n %))
+       (map #(bit-xor n %))
        (bytes-to-string)
   )
 )
@@ -87,6 +87,17 @@
   (let [offset (drop keysize bytes)]
   (bytes-hamming-distance offset bytes))
 )
+
+(defn get-keysize [limit data]
+  (first
+    (->> (range 2 (+ limit 1))
+         (map #(block-hamming % data))
+         (map float)
+         (map vector (range 2 41))
+         (sort-by last)
+         (first)
+         ))
+  )
 
 
 

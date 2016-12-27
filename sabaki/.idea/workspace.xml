@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="857bd32b-ddaa-4197-a9de-2ee7d699445a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ecb-encripted" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sabaki/core.clj" afterPath="$PROJECT_DIR$/src/sabaki/core.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sabaki/encoding.clj" afterPath="$PROJECT_DIR$/src/sabaki/encoding.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sabaki/ops.clj" afterPath="$PROJECT_DIR$/src/sabaki/ops.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/sabaki/test.clj" afterPath="$PROJECT_DIR$/test/sabaki/test.clj" />
     </list>
     <ignored path="sabaki.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,21 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="core.clj" pinned="false" current-in-tab="true">
+      <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sabaki/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.clj" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ecb-encripted" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ecb-encripted">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.clj" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/sabaki/test.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-406">
-              <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="47" selection-end-column="29" />
+            <state relative-caret-position="1348">
+              <caret line="151" column="18" selection-start-line="151" selection-start-column="18" selection-end-line="151" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -45,8 +60,8 @@
       <file leaf-file-name="ops.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sabaki/ops.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+            <state relative-caret-position="120">
+              <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -55,8 +70,8 @@
       <file leaf-file-name="encoding.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sabaki/encoding.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1289">
-              <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+            <state relative-caret-position="268">
+              <caret line="110" column="23" selection-start-line="108" selection-start-column="4" selection-end-line="110" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -100,17 +115,18 @@
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/repeating-key" />
         <option value="$PROJECT_DIR$/repeating-key-test" />
-        <option value="$PROJECT_DIR$/src/sabaki/encoding.clj" />
         <option value="$PROJECT_DIR$/base64-test" />
-        <option value="$PROJECT_DIR$/test/sabaki/test.clj" />
         <option value="$PROJECT_DIR$/super-test" />
-        <option value="$PROJECT_DIR$/src/sabaki/ops.clj" />
+        <option value="$PROJECT_DIR$/ecb-encripted" />
         <option value="$PROJECT_DIR$/src/sabaki/core.clj" />
+        <option value="$PROJECT_DIR$/src/sabaki/encoding.clj" />
+        <option value="$PROJECT_DIR$/src/sabaki/ops.clj" />
+        <option value="$PROJECT_DIR$/test/sabaki/test.clj" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
+    <option name="x" value="12" />
     <option name="y" value="22" />
     <option name="width" value="1400" />
     <option name="height" value="794" />
@@ -232,13 +248,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/clojure-learning" />
+    <property name="last_opened_file_path" value="$USER_HOME$/coydog/coydog/coydog" />
     <property name="cursive.last.file.extension./Users/fanweiwei/\u5bc6\u7801\u5b66/sabaki/sabaki/src" value="clj" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Clojure" />
     <property name="settings.editor.selected.configurable" value="Clojure.IDE" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="ReplState" timestamp="1482661255364">{:repl-history {:ide [], :local [&quot;(letfn [(get-keysize2 [limit data]\n          (-&gt;&gt; (range 2 (+ limit 1))\n               (map #(block-hamming2 % data))\n               (map float)\n               (map vector (range 2 41))\n               (sort-by last)\n               ))\n\n        (block-hamming2 [keysize bytes]\n          (let [offset (drop keysize bytes)]\n            (+ (bytes-hamming-distance2 offset bytes) (/ keysize 8))\n            ))\n\n        (bytes-hamming-distance2 [bytes1 bytes2]\n          (/ (-&gt;&gt; (map bit-xor bytes1 bytes2)\n                  (map byte-hamming-weight)\n                  (reduce +)) (count bytes1)\n             ))\n        ]\n\n  (-&gt;&gt;\n    (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize2 41)\n    )\n  )&quot; &quot;(letfn [(get-keysize2 [limit data]\n          (-&gt;&gt; (range 2 (+ limit 1))\n               (map #(block-hamming2 % data))\n               (map float)\n               (map vector (range 2 41))\n               (sort-by last)\n               ))\n\n        (block-hamming2 [keysize bytes]\n          (let [offset (drop keysize bytes)]\n            (+ (bytes-hamming-distance2 offset bytes) (/ keysize 8))\n            ))\n\n        (bytes-hamming-distance2 [bytes1 bytes2]\n          (/ (-&gt;&gt; (map bit-xor bytes1 bytes2)\n                  (map byte-hamming-weight)\n                  (reduce +)) (count bytes1)\n             ))\n        ]\n\n  (-&gt;&gt;\n    (base64-encode-repeating-key \&quot;super-test\&quot; \&quot;ICE\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize2 41)\n    )\n  )&quot; &quot;(letfn [(get-keysize2 [limit data]\n          (-&gt;&gt; (range 2 (+ limit 1))\n               (map #(block-hamming2 % data))\n               (map float)\n               (map vector (range 2 41))\n               (sort-by last)\n               ))\n\n        (block-hamming2 [keysize bytes]\n          (let [offset (drop keysize bytes)]\n            (bytes-hamming-distance2 offset bytes)\n            ))\n\n        (bytes-hamming-distance2 [bytes1 bytes2]\n          (/ (-&gt;&gt; (map bit-xor bytes1 bytes2)\n                  (map byte-hamming-weight)\n                  (reduce +)) (count bytes1)\n             ))\n        ]\n\n  (-&gt;&gt;\n    (base64-encode-repeating-key \&quot;super-test\&quot; \&quot;ICE\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize2 41)\n    )\n  )&quot; &quot;(letfn [(get-keysize2 [limit data]\n          (-&gt;&gt; (range 2 (+ limit 1))\n               (map #(block-hamming2 % data))\n               (map float)\n               (map vector (range 2 41))\n               (sort-by last)\n               ))\n\n        (block-hamming2 [keysize bytes]\n          (let [offset (drop keysize bytes)]\n            (bytes-hamming-distance2 offset bytes)\n            ))\n\n        (bytes-hamming-distance2 [bytes1 bytes2]\n          (/ (-&gt;&gt; (map bit-xor bytes1 bytes2)\n                  (map byte-hamming-weight)\n                  (reduce +)) (count bytes1)\n             ))\n        ]\n\n  (-&gt;&gt;\n    (slurp \&quot;repeating-key\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize2 41)\n    )\n  )&quot; &quot;\n\n  (-&gt;&gt;\n    (slurp \&quot;repeating-key\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize 41)\n  )\n&quot; &quot;\n\n  (-&gt;&gt;\n    (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n    (get-keysize 41)\n  )\n&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize keysize '(0))\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    ;(process (second lines))\n\n    (-&gt;&gt; (map process lines)\n         (apply mapcat list)\n         (apply str)\n\n         )\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    ;(process (second lines))\n\n    (-&gt;&gt; (map process lines)\n         (apply mapcat list)\n         (apply str)\n\n         )\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    ;(process (second lines))\n\n    (-&gt;&gt; (map process lines)\n         (apply mapcat list)\n         (apply str)\n\n         )\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           )\n\n\n\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (apply map bit-xor data)\n           )\n\n\n\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (apply map list data)\n           )\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (map bit-xor data)\n           )\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (map bit-xor data)\n           (map chr)\n           (str)\n           )\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (map bit-xor data)\n           (map char)\n           (str)\n           )\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (map bit-xor data)\n           (map char)\n           (apply str)\n           )\n      )\n\n\n    ))&quot;], :remote []}}</component>
+  <component name="ReplState" timestamp="1482845626087">{:repl-history {:ide [], :local [&quot;(letfn [(get-keysize2 [limit data]\n          (-&gt;&gt; (range 2 (+ limit 1))\n               (map #(block-hamming2 % data))\n               (map float)\n               (map vector (range 2 41))\n               (sort-by last)\n               ))\n\n        (block-hamming2 [keysize bytes]\n          (let [offset (drop keysize bytes)]\n            (+ (bytes-hamming-distance2 offset bytes) (/ keysize 8))\n            ))\n\n        (bytes-hamming-distance2 [bytes1 bytes2]\n          (/ (-&gt;&gt; (map bit-xor bytes1 bytes2)\n                  (map byte-hamming-weight)\n                  (reduce +)) (count bytes1)\n             ))\n        ]\n\n  (-&gt;&gt;\n    (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize2 41)\n    )\n  )&quot; &quot;(letfn [(get-keysize2 [limit data]\n          (-&gt;&gt; (range 2 (+ limit 1))\n               (map #(block-hamming2 % data))\n               (map float)\n               (map vector (range 2 41))\n               (sort-by last)\n               ))\n\n        (block-hamming2 [keysize bytes]\n          (let [offset (drop keysize bytes)]\n            (+ (bytes-hamming-distance2 offset bytes) (/ keysize 8))\n            ))\n\n        (bytes-hamming-distance2 [bytes1 bytes2]\n          (/ (-&gt;&gt; (map bit-xor bytes1 bytes2)\n                  (map byte-hamming-weight)\n                  (reduce +)) (count bytes1)\n             ))\n        ]\n\n  (-&gt;&gt;\n    (base64-encode-repeating-key \&quot;super-test\&quot; \&quot;ICE\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize2 41)\n    )\n  )&quot; &quot;(letfn [(get-keysize2 [limit data]\n          (-&gt;&gt; (range 2 (+ limit 1))\n               (map #(block-hamming2 % data))\n               (map float)\n               (map vector (range 2 41))\n               (sort-by last)\n               ))\n\n        (block-hamming2 [keysize bytes]\n          (let [offset (drop keysize bytes)]\n            (bytes-hamming-distance2 offset bytes)\n            ))\n\n        (bytes-hamming-distance2 [bytes1 bytes2]\n          (/ (-&gt;&gt; (map bit-xor bytes1 bytes2)\n                  (map byte-hamming-weight)\n                  (reduce +)) (count bytes1)\n             ))\n        ]\n\n  (-&gt;&gt;\n    (base64-encode-repeating-key \&quot;super-test\&quot; \&quot;ICE\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize2 41)\n    )\n  )&quot; &quot;(letfn [(get-keysize2 [limit data]\n          (-&gt;&gt; (range 2 (+ limit 1))\n               (map #(block-hamming2 % data))\n               (map float)\n               (map vector (range 2 41))\n               (sort-by last)\n               ))\n\n        (block-hamming2 [keysize bytes]\n          (let [offset (drop keysize bytes)]\n            (bytes-hamming-distance2 offset bytes)\n            ))\n\n        (bytes-hamming-distance2 [bytes1 bytes2]\n          (/ (-&gt;&gt; (map bit-xor bytes1 bytes2)\n                  (map byte-hamming-weight)\n                  (reduce +)) (count bytes1)\n             ))\n        ]\n\n  (-&gt;&gt;\n    (slurp \&quot;repeating-key\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize2 41)\n    )\n  )&quot; &quot;\n\n  (-&gt;&gt;\n    (slurp \&quot;repeating-key\&quot;)\n    (filter #(not= \\newline %))\n    (map char)\n    (map #(.indexOf base64-chars %))\n    (mapcat base64-to-bits)\n    (partition 8)\n    (map reverse)\n    (map #(map bit-shift-left % (range)))\n    (map #(reduce + %))\n    (get-keysize 41)\n  )\n&quot; &quot;\n\n  (-&gt;&gt;\n    (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n    (get-keysize 41)\n  )\n&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize keysize '(0))\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    ;(process (second lines))\n\n    (-&gt;&gt; (map process lines)\n         (apply mapcat list)\n         (apply str)\n\n         )\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    ;(process (second lines))\n\n    (-&gt;&gt; (map process lines)\n         (apply mapcat list)\n         (apply str)\n\n         )\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    ;(process (second lines))\n\n    (-&gt;&gt; (map process lines)\n         (apply mapcat list)\n         (apply str)\n\n         )\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           )\n\n\n\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (apply map bit-xor data)\n           )\n\n\n\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (apply map list data)\n           )\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (map bit-xor data)\n           )\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (map bit-xor data)\n           (map chr)\n           (str)\n           )\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (map bit-xor data)\n           (map char)\n           (str)\n           )\n      )\n\n\n    ))&quot; &quot;(let [data (slurp-base64-to-bytes \&quot;repeating-key\&quot;)\n      keysize (get-keysize 41 data)\n      lines (-&gt;&gt; data\n                 (partition keysize)\n                 (apply map list))]\n\n  (letfn [(process [line]\n            (-&gt;&gt; (range 256)\n                 (mapv #(xor-with-offset line %))\n                 (sort-by letter-percentage &gt;)\n                 (first)\n                 ;(filter is-letters?)\n                 ;(first)\n                 ))\n\n          ]\n    (let [result (-&gt;&gt; (map process lines)\n                      (apply mapcat list)\n                      (apply str)\n\n                      )]\n      (-&gt;&gt; result\n           (map int)\n           (map bit-xor data)\n           (map char)\n           (apply str)\n           )\n      )\n\n\n    ))&quot; &quot;(-main)&quot; &quot;(time (let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n\n\n        (println result)\n\n  ))&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n\n\n       (println result)\n\n  )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n\n\n  (testing \&quot;Sleazing a single cipher\&quot;\n           (is (= result '(\&quot;Cooking MC's like a pound of bacon\&quot;))))\n\n  )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n\n\n\n  )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n\n      result\n\n  )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n\n  (str result)\n\n  )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n     \n     result\n\n  )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      ;result (-&gt;&gt; test-range\n      ;            (map #(xor-with-offset single-cipher-text %))\n      ;            (filter is-letters?)\n      ;            )\n\n      ]\n     \n     result\n\n  )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      ;result (-&gt;&gt; test-range\n      ;            (map #(xor-with-offset single-cipher-text %))\n      ;            (filter is-letters?)\n      ;            )\n\n      ]\n     \n     ;result\n\n  )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n     \n  (println result)\n  nil\n\n  )&quot; &quot;\n      (-&gt;&gt; (range 256)\n           (mapv #(xor-with-offset \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot; %))\n           (sort-by letter-percentage &gt;)\n           (first)\n           )&quot; &quot;(let [single-cipher-text \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n      result\n      )&quot; &quot;(let [single-cipher-text \n             (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n                  (map #(.indexOf hex-chars %))\n                  (mapcat base16-to-bits)\n                  (partition 8)\n                  (map reverse)\n                  (map #(map bit-shift-left % (range)))\n                  (map #(reduce + %))\n             )\n             \n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n      result\n      )&quot; &quot;(let [single-cipher-text\n      (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n           (map #(.indexOf hex-chars %))\n           (mapcat base16-to-bits)\n           (partition 8)\n           (map reverse)\n           (map #(map bit-shift-left % (range)))\n           (map #(reduce + %))\n           )\n\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n  result\n  )&quot; &quot;(time (let [single-cipher-text\n      (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n           (map #(.indexOf hex-chars %))\n           (mapcat base16-to-bits)\n           (partition 8)\n           (map reverse)\n           (map #(map bit-shift-left % (range)))\n           (map #(reduce + %))\n           )\n\n      test-range (doall (range 256))\n      result (-&gt;&gt; test-range\n                  (map #(xor-with-offset single-cipher-text %))\n                  (filter is-letters?)\n                  )\n\n      ]\n  result\n  ))&quot; &quot;(time (let [single-cipher-text\n            (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n                 (mapv #(.indexOf hex-chars %))\n                 (mapcat base16-to-bits)\n                 (partition 8)\n                 (mapv reverse)\n                 (mapv #(map bit-shift-left % (range)))\n                 (mapv #(reduce + %))\n                 )\n\n            test-range (doall (range 256))\n            result (-&gt;&gt; test-range\n                        (mapv #(xor-with-offset single-cipher-text %))\n                        (filter is-letters?)\n                        )\n\n            ]\n        result\n        ))&quot; &quot;(time (let [single-cipher-text\n            (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n                 (map #(.indexOf hex-chars %))\n                 (mapcat base16-to-bits)\n                 (partition 8)\n                 (mapv reverse)\n                 (mapv #(map bit-shift-left % (range)))\n                 (mapv #(reduce + %))\n                 )\n\n            test-range (doall (range 256))\n            result (-&gt;&gt; test-range\n                        (mapv #(xor-with-offset single-cipher-text %))\n                        (filter is-letters?)\n                        )\n\n            ]\n        result\n        ))&quot; &quot;(time (let [single-cipher-text\n            (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n                 (map #(.indexOf hex-chars %))\n                 (mapcat base16-to-bits)\n                 (partition 8)\n                 (map reverse)\n                 (mapv #(map bit-shift-left % (range)))\n                 (mapv #(reduce + %))\n                 )\n\n            test-range (doall (range 256))\n            result (-&gt;&gt; test-range\n                        (mapv #(xor-with-offset single-cipher-text %))\n                        (filter is-letters?)\n                        )\n\n            ]\n        result\n        ))&quot; &quot;(time (let [single-cipher-text\n            (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n                 (map #(.indexOf hex-chars %))\n                 (mapcat base16-to-bits)\n                 (partition 8)\n                 (map reverse)\n                 (map #(map bit-shift-left % (range)))\n                 (mapv #(reduce + %))\n                 )\n\n            test-range (doall (range 256))\n            result (-&gt;&gt; test-range\n                        (mapv #(xor-with-offset single-cipher-text %))\n                        (filter is-letters?)\n                        )\n\n            ]\n        result\n        ))&quot; &quot;(time (let [single-cipher-text\n            (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n                 (map #(.indexOf hex-chars %))\n                 (mapcat base16-to-bits)\n                 (partition 8)\n                 (map reverse)\n                 (map #(map bit-shift-left % (range)))\n                 (map #(reduce + %))\n                 )\n\n            test-range (doall (range 256))\n            result (-&gt;&gt; test-range\n                        (mapv #(xor-with-offset single-cipher-text %))\n                        (filter is-letters?)\n                        )\n\n            ]\n        result\n        ))&quot; &quot;(time (let [single-cipher-text\n            (-&gt;&gt; \&quot;1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736\&quot;\n                 (map #(.indexOf hex-chars %))\n                 (mapcat base16-to-bits)\n                 (partition 8)\n                 (map reverse)\n                 (map #(map bit-shift-left % (range)))\n                 (map #(reduce + %))\n                 )\n\n            test-range (doall (range 256))\n            result (-&gt;&gt; test-range\n                        (map #(xor-with-offset single-cipher-text %))\n                        (filter is-letters?)\n                        )\n\n            ]\n        result\n        ))&quot;], :remote []}}</component>
   <component name="RunManager" selected="Clojure REPL.Repplsauce">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -466,19 +485,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="22" width="1400" height="794" extended-state="0" />
-    <editor active="false" />
+    <frame x="12" y="22" width="1400" height="794" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53313696" sideWeight="0.45501474" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.58836526" sideWeight="0.45501474" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5681818" sideWeight="0.29056048" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16951567" sideWeight="0.54498523" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27920228" sideWeight="0.54498523" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19661267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -545,14 +564,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sabaki/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sabaki/ops.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
@@ -918,37 +929,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/sabaki/test.clj">
+    <entry file="file://$PROJECT_DIR$/src/sabaki/encoding.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-406">
-          <caret line="37" column="10" selection-start-line="37" selection-start-column="10" selection-end-line="47" selection-end-column="29" />
+        <state relative-caret-position="268">
+          <caret line="110" column="23" selection-start-line="108" selection-start-column="4" selection-end-line="110" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sabaki/encoding.clj">
+    <entry file="file://$PROJECT_DIR$/ecb-encripted">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1289">
-          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sabaki/ops.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+        <state relative-caret-position="120">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sabaki/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/sabaki/test.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1348">
+          <caret line="151" column="18" selection-start-line="151" selection-start-column="18" selection-end-line="151" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>IDE SDK</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>sabaki</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Leiningen: clojure-complete:0.2.4</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

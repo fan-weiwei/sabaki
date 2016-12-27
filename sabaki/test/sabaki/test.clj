@@ -11,13 +11,20 @@
 
 (deftest hex
 
-  (def hex-string "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d")
-  (def irl-string "I'm killing your brain like a poisonous mushroom")
-  (def base64-string "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t")
+  (let [hex-string "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"
+        irl-string "I'm killing your brain like a poisonous mushroom"
+        base64-string "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t"]
 
-  (testing "Test hex-string to base64"
-    (def result (bits-to-base64String (hexstring-to-bits hex-string)))
-    (is (= result base64-string)))
+
+    (testing "Test hex-string to base64"
+      (let [result (bits-to-base64String (hexstring-to-bits hex-string))]
+        (is (= result base64-string))
+
+        )
+      )
+
+  )
+
 )
 
 (deftest base64-slurp
@@ -75,23 +82,31 @@
 
 )
 
-(comment
 (deftest single-cipher
 
-  (def single-cipher-text "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736")
-  (def test-range (doall (range 256)))
+  (let [single-cipher-text
+              (->> "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
+                   (map #(.indexOf hex-chars %))
+                   (mapcat base16-to-bits)
+                   (partition 8)
+                   (map reverse)
+                   (map #(map bit-shift-left % (range)))
+                   (map #(reduce + %))
+                   )
 
-  (def result
-      (->> test-range
-          (map #(xor-with-offset single-cipher-text %))
-          (filter is-letters?)
-      )
-  )
+              test-range (doall (range 256))
+              result (->> test-range
+                          (map #(xor-with-offset single-cipher-text %))
+                          (filter is-letters?)
+                          )
 
-  (testing "Sleazing a single cipher"
-    (is (= result '("Cooking MC's like a pound of bacon"))))
+              ]
+          (testing "Sleazing a single cipher"
+            (is (= result '("Cooking MC's like a pound of bacon"))))
 
-))
+          )
+
+)
 
 (deftest hamming-distance
 
@@ -99,5 +114,49 @@
     (is (= (ascii-hamming-distance "this is a test" "wokka wokka!!!") 37
     ))
   )
+)
+
+(deftest break-vigenere
+
+  (testing "Example breaking vignere"
+    (println
+      (let [data (slurp-base64-to-bytes "repeating-key")
+            keysize (get-keysize 41 data)
+            lines (->> data
+                       (partition keysize)
+                       (apply map list))]
+
+        (letfn [(process [line]
+                  (->> (range 256)
+                       (map #(xor-with-offset line %))
+                       (sort-by letter-percentage >)
+                       (first)
+                       ))
+
+                ]
+
+          (let [result (->> (map process lines)
+                            (apply mapcat list)
+                            (apply str)
+
+                            )]
+
+
+            (->> result
+                 (map int)
+                 (map bit-xor data)
+                 (map char)
+                 (take keysize)
+                 (apply str)
+                 )
+            result
+
+            (is (= (apply str (take 30 result)) "I'm back and I'm ringin' the b"))
+            )
+
+          )))
+    )
+
+
 )
 
