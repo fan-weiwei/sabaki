@@ -68,8 +68,12 @@
 
 (defn hexstring-to-bytes [string]
   (->> string
-       (map chr-to-nibble)
-       (nibbles-to-bytes)
+       (map #(.indexOf hex-chars %))
+       (mapcat base16-to-bits)
+       (partition 8)
+       (map reverse)
+       (map #(map bit-shift-left % (range)))
+       (map #(reduce + %))
        )
   )
 
