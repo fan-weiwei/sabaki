@@ -104,74 +104,28 @@
   )
 )
 
-(defn create-key-schedule [key-as-hex]
-
-  (let [key0    (->> key-as-hex
-                     (partition 8)
-                     (map hexstring-to-bytes)
-                     (into []))
-
-
-        key-schedule  (mapcat identity
-                              (reduce
-                                (fn [acc r]
-                                  (conj acc (expand-key (last acc) r)))
-                                [key0] rcon))
-
-        ]
-
-    (map #(apply str %) (partition 4 (map word-to-hex key-schedule))))
-
- )
-
 
 (defn xor-block [block1 block2]
 
-  (word-to-hex
-    (map bit-xor
-       (hexstring-to-bytes block1)
-       (hexstring-to-bytes block2)))
-)
+  (map (partial map bit-xor) block1 block2)
+  )
 
-(defn shift-rows [block]
 
-    (->> block
-         (hexstring-to-bytes)
-         (partition 4)
-         (apply map vector)
-         (#(map rot-word-by % [0 1 2 3]))
-         (apply map vector)
-         (map word-to-hex)
-         (apply str)
-         )
-
-)
 
 (defn inv-shift-rows [block]
 
   (->> block
-       (hexstring-to-bytes)
-       (partition 4)
        (apply map vector)
        (#(map rot-word-by % [0 3 2 1]))
        (apply map vector)
-       (map word-to-hex)
-       (apply str)
        )
 
-)
+  )
+
 
 (defn inv-s-box-block [block]
-
-  (->> block
-       (hexstring-to-bytes)
-       (map inv-s-box)
-       (word-to-hex)
-       (apply str)
+  (map (partial map inv-s-box) block)
        )
-
-
-)
 
 (defn gx02 "multiplication by 2 in a galois field" [x]
 
@@ -206,22 +160,39 @@
     (bit-xor (bit-xor eight four) (gx02 x)))
 )
 
+
 (defn inv-mix-columns [block]
 
   (let [inv-mix [gx0E gx0B gx0D gx09]]
     (->> block
-         (hexstring-to-bytes)
-         (partition 4)
          (mapcat #(repeat 4 %))
          (#(map rot-word-by % [0 1 2 3 0 1 2 3 0 1 2 3 0 1 2 3]))
          (map #(map (fn [f v] (f v)) inv-mix %))
          (partition 4)
          (map #(map (fn [x] (reduce bit-xor x)) %))
-         (mapcat word-to-hex)
-         (apply str)
          )
     )
-)
+  )
+
+
+
+(defn create-key-schedule [key-as-bytes]
+
+  (let [key0    (->> key-as-bytes
+                     (partition 4))
+
+
+        key-schedule  (mapcat identity
+                              (reduce
+                                (fn [acc r]
+                                  (conj acc (expand-key (last acc) r)))
+                                [key0] rcon))
+
+        ]
+
+    (partition 4 key-schedule)
+
+  ))
 
 (defn aes-decrypt [input key]
   (let [schedule (reverse (create-key-schedule key))]
@@ -248,44 +219,28 @@
 
 
 
-)
+  )
 
 
 (defn -main "高级加密标准" [& args]
 
-  (let [key (->> "YELLOW SUBMARINE"
-                 (map int)
-                 (map byte-to-bits)
-                 (mapcat bits-to-hexString)
-                 (apply str))
-        data (slurp-base64-to-bytes "ecb-encrypted")
 
-        ]
+  (time (let [key (->> "YELLOW SUBMARINE"
+                    (map int))
+           data (->>
+                  (slurp-base64-to-bytes "ecb-encrypted")
+                  )
 
-    (->> data
-         (partition 16)
-         (map #(map byte-to-bits %))
-         (map #(map bits-to-hexString %))
-         (map #(apply str %))
-         (map #(aes-decrypt % key))
-         (map #(hexstring-to-bytes %))
-         (map #(bytes-to-string %))
-         (apply str)
-         )
+           ]
 
-    )
+       (->> data
+            (partition 16)
+            (map (partial partition 4))
+            (mapcat #(aes-decrypt % key))
+            (map (partial bytes-to-string ))
+            (apply str)
+            )
 
-
-
-  ;(aes-decrypt "69c4e0d86a7b0430d8cdb78070b4c55a"
-  ;             "000102030405060708090a0b0c0d0e0f")
-  ;cipher-hex  "69c4e0d86a7b0430d8cdb78070b4c55a"
-  ;key0    (->> "2b7e151628aed2a6abf7158809cf4f3c"
-  ;(def key '('(43 126 21 22) '(40 174 210 166) '(171 247 21 136) '(9 207 79 60)))
-  ;(def next '(139 132 235 1))
-
-
-
-
+       ))
 
 )
