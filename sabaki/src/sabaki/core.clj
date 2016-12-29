@@ -61,6 +61,10 @@
   (concat (rest word) (list (first word)))
 )
 
+(defn rot-word-by [word n]
+  (concat (drop n word) (take n word))
+)
+
 (defn word-to-hex [word]
   (->> word
        (map byte-to-bits)
@@ -121,21 +125,142 @@
  )
 
 
+(defn xor-block [block1 block2]
+
+  (word-to-hex
+    (map bit-xor
+       (hexstring-to-bytes block1)
+       (hexstring-to-bytes block2)))
+)
+
+(defn shift-rows [block]
+
+    (->> block
+         (hexstring-to-bytes)
+         (partition 4)
+         (apply map vector)
+         (#(map rot-word-by % [0 1 2 3]))
+         (apply map vector)
+         (map word-to-hex)
+         (apply str)
+         )
+
+)
+
+(defn inv-shift-rows [block]
+
+  (->> block
+       (hexstring-to-bytes)
+       (partition 4)
+       (apply map vector)
+       (#(map rot-word-by % [0 3 2 1]))
+       (apply map vector)
+       (map word-to-hex)
+       (apply str)
+       )
+
+)
+
+(defn inv-s-box-block [block]
+
+  (->> block
+       (hexstring-to-bytes)
+       (map inv-s-box)
+       (word-to-hex)
+       (apply str)
+       )
+
+
+)
+
+(defn gx02 "multiplication by 2 in a galois field" [x]
+
+  (cond-> (bit-and 0xff (bit-shift-left x 1))
+          (bit-test x 7) (bit-xor 0x1b))
+
+)
+
+(defn gx03 "multiplication by 3 in a galois field" [x]
+  (bit-xor (gx02 x) x)
+)
+
+(defn gx09 "multiplication by 9 in a galois field" [x]
+  (bit-xor (gx02 (gx02 (gx02 x))) x)
+)
+
+(defn gx0B "multiplication by 11 in a galois field" [x]
+  (let [nine (gx09 x)
+        two  (gx02 x)]
+    (bit-xor nine two))
+ )
+
+(defn gx0D "multiplication by 13 in a galois field" [x]
+  (let [nine (gx09 x)
+        four (gx02 (gx02 x))]
+    (bit-xor nine four))
+  )
+
+(defn gx0E "multiplication by 14 in a galois field" [x]
+  (let [eight (gx02 (gx02 (gx02 x)))
+        four  (gx02 (gx02 x))]
+    (bit-xor (bit-xor eight four) (gx02 x)))
+)
+
+(defn inv-mix-columns [block]
+
+  (let [inv-mix [gx0E gx0B gx0D gx09]]
+    (->> block
+         (hexstring-to-bytes)
+         (partition 4)
+         (mapcat #(repeat 4 %))
+         (#(map rot-word-by % [0 1 2 3 0 1 2 3 0 1 2 3 0 1 2 3]))
+         (map #(map (fn [f v] (f v)) inv-mix %))
+         (partition 4)
+         (map #(map (fn [x] (reduce bit-xor x)) %))
+         (mapcat word-to-hex)
+         (apply str)
+         )
+    )
+)
+
+(defn aes-decrypt [input key]
+  (let [schedule (reverse (create-key-schedule key))]
+
+    (->>
+      (xor-block (nth schedule 0) input)
+      (#(reduce
+          (fn [acc n]
+            (->> acc
+                 (inv-shift-rows)
+                 (inv-s-box-block)
+                 (xor-block (nth schedule n))
+                 (inv-mix-columns)
+                 )
+            )
+          %
+          (range 1 10)
+          ))
+      (inv-shift-rows)
+      (inv-s-box-block)
+      (xor-block (nth schedule 10))
+      )
+    )
+
+
+
+)
 
 
 (defn -main "高级加密标准" [& args]
+  (aes-decrypt "69c4e0d86a7b0430d8cdb78070b4c55a"
+               "000102030405060708090a0b0c0d0e0f")
   ;cipher-hex  "69c4e0d86a7b0430d8cdb78070b4c55a"
   ;key0    (->> "2b7e151628aed2a6abf7158809cf4f3c"
   ;(def key '('(43 126 21 22) '(40 174 210 166) '(171 247 21 136) '(9 207 79 60)))
   ;(def next '(139 132 235 1))
-  (let [key   "000102030405060708090a0b0c0d0e0f"
-        input "69c4e0d86a7b0430d8cdb78070b4c55a"
-        schedule (reverse (create-key-schedule key))]
-
-      schedule
 
 
-  )
+
 
 
 )
