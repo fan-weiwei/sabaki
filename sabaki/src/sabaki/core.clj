@@ -252,8 +252,33 @@
 
 
 (defn -main "高级加密标准" [& args]
-  (aes-decrypt "69c4e0d86a7b0430d8cdb78070b4c55a"
-               "000102030405060708090a0b0c0d0e0f")
+
+  (let [key (->> "YELLOW SUBMARINE"
+                 (map int)
+                 (map byte-to-bits)
+                 (mapcat bits-to-hexString)
+                 (apply str))
+        data (slurp-base64-to-bytes "ecb-encrypted")
+
+        ]
+
+    (->> data
+         (partition 16)
+         (map #(map byte-to-bits %))
+         (map #(map bits-to-hexString %))
+         (map #(apply str %))
+         (map #(aes-decrypt % key))
+         (map #(hexstring-to-bytes %))
+         (map #(bytes-to-string %))
+         (apply str)
+         )
+
+    )
+
+
+
+  ;(aes-decrypt "69c4e0d86a7b0430d8cdb78070b4c55a"
+  ;             "000102030405060708090a0b0c0d0e0f")
   ;cipher-hex  "69c4e0d86a7b0430d8cdb78070b4c55a"
   ;key0    (->> "2b7e151628aed2a6abf7158809cf4f3c"
   ;(def key '('(43 126 21 22) '(40 174 210 166) '(171 247 21 136) '(9 207 79 60)))
